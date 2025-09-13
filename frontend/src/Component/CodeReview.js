@@ -24,7 +24,7 @@ function Review() {
   const reviewCode = async () => {
     try {
       handleSuccess("Your code is being reviewed. Please wait a moment ⏳");
-      const response = await axios.post("http://localhost:4000/ai/get-review", {
+      const response = await axios.post(process.env.REACT_APP_BASE_URL, {
         code,
       });
       setReview(response.data);
