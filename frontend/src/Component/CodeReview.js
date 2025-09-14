@@ -24,9 +24,12 @@ function Review() {
   const reviewCode = async () => {
     try {
       handleSuccess("Your code is being reviewed. Please wait a moment ⏳");
-      const response = await axios.post("http://localhost:4000/ai/get-review", {
-        code,
-      });
+      const response = await axios.post(
+        "https://code-review-website.onrender.com/ai/get-review",
+        {
+          code,
+        }
+      );
       setReview(response.data);
       setMessage(true);
     } catch (err) {
